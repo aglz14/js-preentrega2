@@ -40,33 +40,47 @@ const calculateSteps = () => {
   const actualSteps = getActualSteps();
   const idealSteps = getIdealSteps();
 
+  let mensaje1; // Define la variable fuera para poder usarla en ambos, console.log y alert
+
   if (actualSteps === idealSteps) {
-    console.log("¡Caminaste la cantidad perfecta para mantenerte sano!");
+    mensaje1 = "¡Caminaste la cantidad perfecta para mantenerte sano!";
   } else if (actualSteps > idealSteps) {
-    console.log(`Caminaste ${actualSteps - idealSteps} pasos extras, sigue así.`);
+    mensaje1 = `Caminaste ${actualSteps - idealSteps} pasos extras, sigue así.`;
   } else {
-    console.log(`Deberías caminar un poco más, caminaste ${idealSteps - actualSteps} pasos menos de los que deberías.`);
+    mensaje1 = `Deberías caminar un poco más, caminaste ${idealSteps - actualSteps} pasos menos de los que deberías.`;
   }
+  console.log(mensaje1);
+  alert(mensaje1);
 };
 
 calculateSteps();
-console.log(getActualSteps() + " pasos en total.");
+const mensaje2 = getActualSteps() + " pasos en total.";
+console.log(mensaje2);
+alert(mensaje2);
 
 // Calcular y mostrar las calorías quemadas
 const calcularCalorias = () => {
   const calorias = 0.029 * (usuario.peso * 2.2) * usuario.tiempoCaminata;
+  let mensajeCalorias;
   switch (true) {
     case usuario.tiempoCaminata === 60:
-      console.log(`Quemas ${calorias} calorías al día. Caminas el tiempo suficiente para mantenerte sano.`);
+      mensajeCalorias = `Quemas ${calorias} calorías al día. Caminas el tiempo suficiente para mantenerte sano.`;
+      console.log(mensajeCalorias);
+      alert(mensajeCalorias);
       break;
     case usuario.tiempoCaminata < 60:
-      console.log(`Quemas ${calorias} calorías al día. Te recomendamos caminar por lo menos 1 hora al día.`);
+      mensajeCalorias = `Quemas ${calorias} calorías al día. Te recomendamos caminar por lo menos 1 hora al día.`;
+      console.log(mensajeCalorias);
+      alert(mensajeCalorias);
       break;
     case usuario.tiempoCaminata > 60:
-      console.log(`Quemas ${calorias} calorías al día. Felicidades, eres un deportista.`);
+      mensajeCalorias = `Quemas ${calorias} calorías al día. Felicidades, eres un deportista.`;
+      console.log(mensajeCalorias);
+      alert(mensajeCalorias);
       break;
     default:
       console.log("Error");
+      alert("Error");
       break;
   }
 };
